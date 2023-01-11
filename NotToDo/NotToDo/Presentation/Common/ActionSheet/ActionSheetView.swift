@@ -158,23 +158,28 @@ extension ActionSheetView {
     private func setCalendarUI() {
         setCalendarText()
         setCalendarColor()
+        
         hStack.do {
             $0.axis = .horizontal
             $0.distribution = .fillProportionally
             $0.spacing = 14.adjusted
         }
+        
         leftButton.do {
             $0.setImage(.calendarLeftArrow, for: .normal)
             $0.addTarget(self, action: #selector(prevButtonTapped), for: .touchUpInside)
         }
+        
         rightButton.do {
             $0.setImage(.calendarRightArrow, for: .normal)
             $0.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         }
+        
         dateFormatter.do {
             $0.locale = Locale(identifier: "ko_KR")
             $0.dateFormat = "yyyy년 M월"
         }
+        
         calendar.do {
             $0.calendarHeaderView.isHidden = true
             $0.appearance.headerMinimumDissolvedAlpha = 0
@@ -182,7 +187,10 @@ extension ActionSheetView {
             $0.headerHeight = 0
             $0.scope = .month
             $0.allowsMultipleSelection = true
+            $0.locale = Locale(identifier: "ko_KR")
+
         }
+        
         headerLabel.text = self.dateFormatter.string(from: calendar.currentPage)
     }
     
