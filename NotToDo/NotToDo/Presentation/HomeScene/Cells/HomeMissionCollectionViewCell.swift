@@ -263,9 +263,6 @@ extension HomeMissionCollectionViewCell {
         statusButton.addTarget(self,
                                action: #selector(statusButtonTapped),
                                for: .touchUpInside)
-//        meatballButton.addTarget(self,
-//                                 action: #selector(meatballButtonTapped),
-//                                 for: .touchUpInside)
     }
     
     private func setRecognizer() {
@@ -279,7 +276,6 @@ extension HomeMissionCollectionViewCell {
     }
     
     @objc func meatballButtonTapped(_ sender: UIView) {
-        print("😊")
         meatballClickedEvent?(true)
     }
 }

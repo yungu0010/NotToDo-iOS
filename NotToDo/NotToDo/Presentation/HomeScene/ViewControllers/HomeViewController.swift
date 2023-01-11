@@ -74,7 +74,6 @@ extension HomeViewController: UICollectionViewDataSource {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMissionCollectionViewCell.identifier, for: indexPath) as? HomeMissionCollectionViewCell else { return UICollectionViewCell() }
                 cell.configure(missionList[indexPath.row])
                 cell.meatballClickedEvent = { result in
-                    print(result, "😃")
                     if result {
                         let actionSheetViewController = ActionSheetViewController()
                         actionSheetViewController.modalPresentationStyle = .overFullScreen
